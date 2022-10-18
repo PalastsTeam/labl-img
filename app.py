@@ -28,7 +28,7 @@ sh = gc.open_by_url(gs_url)
 worksheet = sh.get_worksheet(0)
 data = worksheet.get_all_records()
 
-st.write(data)
+st.table(data)
 labeled_items = data['Filename'].unique()
 
 final_list = list(set(all_items) - set(labeled_items))
