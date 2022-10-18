@@ -69,7 +69,6 @@ with col1:
                                                 'plastik',
                                                 'other'],
                               key='material'
-
                               )
 
     symetrie = st.checkbox('Is symetric?', True)
@@ -116,7 +115,7 @@ with col3:
     back_length = st.multiselect(
         'Back length',
         ['short', 'mittel', 'long', 'extralong', 'none'],
-        ['short', 'mittel', 'long', 'extralong', 'none'],
+        [],
         key='blength')
 
     back_form = st.multiselect(
