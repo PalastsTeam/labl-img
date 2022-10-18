@@ -29,7 +29,7 @@ worksheet = sh.get_worksheet(0)
 data = worksheet.get_all_records()
 
 
-labeled_items = data[['Filename']]
+labeled_items = data['Filename']
 
 final_list = list(set(all_items) - set(labeled_items))
 
