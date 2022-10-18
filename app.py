@@ -27,8 +27,11 @@ gc = gs.service_account_from_dict(credentials)
 sh = gc.open_by_url(gs_url)
 worksheet = sh.get_worksheet(0)
 data = worksheet.get_all_records()
+labeled_items = data.Filename.unique()
 
-filename = all_items[st.session_state.count]
+final_list = list(set(all_items) - set(labeled_items))
+
+filename = final_list[st.session_state.count]
 path = "img/{}".format(filename)
 
 
