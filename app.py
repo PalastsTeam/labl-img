@@ -1,6 +1,7 @@
 import streamlit as st
 import gspread as gs
 import os
+import pandas as pd
 from src.helpers import get_items, save_into_csv
 
 all_items = os.listdir('img')
