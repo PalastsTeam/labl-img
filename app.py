@@ -145,11 +145,11 @@ with col3:
         ['rund'],
         key='aform')
 
-    arm_direction = st.multiselect(
-        'Armlehnen direction',
-        ['streight', 'standingout'],
-        ['standingout'],
-        key='adir')
+    # arm_direction = st.multiselect(
+    #    'Armlehnen direction',
+    #    ['streight', 'standingout'],
+    #    ['standingout'],
+    #    key='adir')
     arm_direction = st.checkbox('Standing out armrests?')
 
 increment = st.button('Confirm')
