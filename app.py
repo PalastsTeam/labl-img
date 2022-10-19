@@ -54,8 +54,7 @@ with col1:
 
     styles = st.multiselect(
         'Style',
-        ['Midcentury', 'Landhause', 'contemporary', 'minimalism',
-            'antique', 'industrial', 'Victorian', 'other'],
+        ['Midcentury', 'Landhause', 'Modern', 'Classic', 'Other'],
         ['Midcentury'],
         key='style')
 
@@ -78,12 +77,13 @@ with col1:
                               )
 
     symetrie = st.checkbox('Is symetric?', True)
-    nlegs = st.slider('How many legs', min_value=0,
-                      max_value=5, value=4, key='nlegs')
 
 
 with col2:
     st.subheader('Legs')
+
+    nlegs = st.slider('How many legs', min_value=0,
+                      max_value=5, value=4, key='nlegs')
 
     leg_length = st.multiselect(
         'Leg length',
@@ -103,11 +103,13 @@ with col2:
         ['straight'],
         key='lform')
 
-    leg_direction = st.multiselect(
-        'Leg direction',
-        ['straight', 'standingout'],
-        ['standingout'],
-        key='ldir')
+    leg_direction = st.checkbox('Standing out legs?')
+
+    # leg_direction = st.multiselect(
+    #    'Leg direction',
+    #    ['straight', 'standingout'],
+    #    ['standingout'],
+    #    key='ldir')
 
     leg_color = st.multiselect(
         'Leg color',
@@ -116,7 +118,7 @@ with col2:
         [],
         key='lcol')
 
-with col3:
+with col4:
     st.subheader('Rücklehne')
     back_length = st.multiselect(
         'Back length',
@@ -130,14 +132,10 @@ with col3:
         ['eckig', 'rund', 'curvy'],
         key='bform')
 
-    back_direction = st.multiselect(
-        'Back direction',
-        ['straight', 'standout'],
-        ['straight'],
-        key='bdir')
+    back_direction = st.checkbox('Standing out back?')
 
 
-with col4:
+with col3:
     st.subheader('Armlehne')
     n_arms = st.slider('N Armlehnen', min_value=0, max_value=2)
 
@@ -152,6 +150,7 @@ with col4:
         ['streight', 'standingout'],
         ['standingout'],
         key='adir')
+    arm_direction = st.checkbox('Standing out armrests?')
 
 increment = st.button('Confirm')
 if increment:
