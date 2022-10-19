@@ -54,7 +54,7 @@ with col1:
 
     styles = st.multiselect(
         'Style',
-        ['Midcentury', 'Landhause', 'Modern', 'Classic', 'Other'],
+        ['Midcentury', 'Landhause', 'Modern', 'Classic', 'Industrial', 'Other'],
         ['Midcentury'],
         key='style')
 
