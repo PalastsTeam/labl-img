@@ -3,6 +3,7 @@ import gspread as gs
 import os
 import pandas as pd
 from src.helpers import get_items, save_into_csv
+import datetime
 
 all_items = os.listdir('img')
 
@@ -40,6 +41,7 @@ path = "img/{}".format(filename)
 
 with st.sidebar:
     st.image(path)
+    skipped = st.checkbox('Skipped?', False)
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -162,7 +164,7 @@ if increment:
                       leg_form), str(leg_direction),
                   str(leg_color), str(back_length), str(
                       back_form), str(back_direction), str(n_arms),
-                  str(arm_form), str(arm_direction))
+                  str(arm_form), str(arm_direction), str(skipped))
 
     st.write('Thanks! Saved!')
     with st.sidebar:
