@@ -77,6 +77,22 @@ with col1:
                                                 'other'],
                               key='material'
                               )
+    farbe = st.multiselect('Farbe', ['grau',
+                                     'blau',
+                                     'braun',
+                                     'grün',
+                                     'beige',
+                                     'rot',
+                                     'gelb',
+                                     'rosa',
+                                     'gold',
+                                     'silber',
+                                     'schwarz',
+                                     'weiß',
+                                     'lila',
+                                     'orange'],
+                           key='farb'
+                           )
 
     symetrie = st.checkbox('Is symetric?', True)
 
@@ -159,7 +175,8 @@ if increment:
     st.session_state.count += 1
 
     save_into_csv(str(filename), str(types), str(styles),
-                  str(pattern), str(material), str(symetrie), str(nlegs),
+                  str(pattern), str(material), str(
+                      farbe), str(symetrie), str(nlegs),
                   str(leg_length), str(leg_width), str(
                       leg_form), str(leg_direction),
                   str(leg_color), str(back_length), str(

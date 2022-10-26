@@ -24,12 +24,12 @@ def get_items():
     return worksheet.get_all_records()
 
 
-def save_into_csv(filename, types, styles, pattern, material, symetrie, nlegs, leg_length, leg_width, leg_form, leg_direction, leg_color, back_length, back_form, back_direction, n_arms, arm_form, arm_direction, skipped):
+def save_into_csv(filename, types, styles, pattern, material, farbe, symetrie, nlegs, leg_length, leg_width, leg_form, leg_direction, leg_color, back_length, back_form, back_direction, n_arms, arm_form, arm_direction, skipped):
     gc = gs.service_account_from_dict(credentials)
     sh = gc.open_by_url(gs_url)
     worksheet = sh.get_worksheet(0)
 
-    new_row = [filename, types, styles, pattern, material, symetrie, nlegs, leg_length, leg_width,
+    new_row = [filename, types, styles, pattern, material, farbe, symetrie, nlegs, leg_length, leg_width,
                leg_form, leg_direction, leg_color, back_length, back_form, back_direction,
                n_arms, arm_form, arm_direction, str(datetime.datetime.now()), skipped]
     worksheet.append_row(new_row)
